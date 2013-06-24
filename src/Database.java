@@ -37,7 +37,7 @@ public class Database
 		} 
 		catch (Exception e) 
 		{
-			System.out.print("Problem grabbing data");
+			e.printStackTrace();
 		}
 	}
 

@@ -1,0 +1,280 @@
+<td>FLOAT</td>
+<td>Number of Shares Outstanding</td>
+</tr>
+<tr>
+<td>INSIDER</td>
+<td>Insider Holdings</td>
+</tr>
+<tr>
+<td>CAPEX</td>
+<td>Capital Expenditures</td>
+</tr>
+<tr>
+<td>NET_MARG</td>
+<td>Net Margin</td>
+</tr>
+<tr>
+<td>INV_CAP</td>
+<td>Invested Capital</td>
+</tr>
+<tr>
+<td>P_S</td>
+<td>Price to Sales Ratio</td>
+</tr>
+<tr>
+<td>ROC</td>
+<td>Return on Capital</td>
+</tr>
+<tr>
+<td>STOCK_PX</td>
+<td>Stock Price</td>
+</tr>
+<tr>
+<td>MKT_DE</td>
+<td>Market Debt to Equity Ratio</td>
+</tr>
+<tr>
+<td>CORREL</td>
+<td>Correlation with the Market</td>
+</tr>
+<tr>
+<td>PE_FWD</td>
+<td>Forward PE Ratio</td>
+</tr>
+<tr>
+<td>REV_GRO</td>
+<td>Previous Year Growth in Revenues</td>
+</tr>
+<tr>
+<td>EBIT_1T</td>
+<td>EBIT for Previous Period</td>
+</tr>
+<tr>
+<td>DIV</td>
+<td>Dividends</td>
+</tr>
+<tr>
+<td>EPS_FWD</td>
+<td>Forward Earnings Per Share</td>
+</tr>
+<tr>
+<td>CHG_NCWC</td>
+<td>Change in Non-Cash Working Capital</td>
+</tr>
+<tr>
+<td>CASH_FV</td>
+<td>Cash as Percentage of Firm Value</td>
+</tr>
+<tr>
+<td>INST_HOLD</td>
+<td>Institutional Holdings</td>
+</tr>
+<tr>
+<td>EFF_TAX</td>
+<td>Effective Tax Rate</td>
+</tr>
+<tr>
+<td>CASH_ASSETS</td>
+<td>Cash as Percentage of Total Assets</td>
+</tr>
+<tr>
+<td>FIXED_TOT</td>
+<td>Ratio of Fixed Assets to Total Assets</td>
+</tr>
+<tr>
+<td>BETA_VL</td>
+<td>Value Line Beta</td>
+</tr>
+<tr>
+<td>BV_ASSETS</td>
+<td>Book Value of Assets</td>
+</tr>
+<tr>
+<td>BV_EQTY</td>
+<td>Book Value of Equity</td>
+</tr>
+<tr>
+<td>FCFF</td>
+<td>Free Cash Flow to Firm</td>
+</tr>
+<tr>
+<td>CASH_REV</td>
+<td>Cash as Percentage of Revenues</td>
+</tr>
+<tr>
+<td>MKT_CAP</td>
+<td>Market Capitalization</td>
+</tr>
+<tr>
+<td>EFF_TAX_INC</td>
+<td>Effective Tax Rate on Income</td>
+</tr>
+<tr>
+<td>EV_SALES</td>
+<td>EV To Sales Ratio</td>
+</tr>
+<tr>
+<td>TOT_DEBT</td>
+<td>Total Debt</td>
+</tr>
+<tr>
+<td>INTANG_TOT</td>
+<td>Ratio of Intangible Assets to Total Assets</td>
+</tr>
+<tr>
+<td>PE_G</td>
+<td>PE to Growth Ratio</td>
+</tr>
+<tr>
+<td>REINV_RATE</td>
+<td>Reinvestment Rate</td>
+</tr>
+<tr>
+<td>BOOK_DC</td>
+<td>Book Debt to Capital Ratio</td>
+</tr>
+<tr>
+<td>EPS_GRO_EXP</td>
+<td>Expected Growth in Earnings Per Share</td>
+</tr>
+<tr>
+<td>EV_EBIT</td>
+<td>EV to EBIT Ratio</td>
+</tr>
+<tr>
+<td>PE_CURR</td>
+<td>Current PE Ratio</td>
+</tr>
+<tr>
+<td>MKT_DC</td>
+<td>Market Debt to Capital Ratio</td>
+</tr>
+<tr>
+<td>NCWC_REV</td>
+<td>Non-Cash Working Capital as Percentage of Revenues</td>
+</tr>
+<tr>
+<td>REV_12M</td>
+<td>Trailing 12-month Revenues</td>
+</tr>
+<tr>
+<td>REV_GRO_EXP</td>
+<td>Expected Growth in Revenues</td>
+</tr>
+<tr>
+<td>REV_TRAIL</td>
+<td>Trailing Revenues</td>
+</tr>
+<tr>
+<td>ROE</td>
+<td>Return on Equity</td>
+</tr>
+<tr>
+<td>EV_EBITDA</td>
+<td>EV to EBITDA Ratio</td>
+</tr>
+<tr>
+<td>EBITDA</td>
+<td>Earnings Before Interest Taxes Depreciation and Amortization</td>
+</tr>
+<tr>
+<td>BETA</td>
+<td>3-Year Regression Beta</td>
+</tr>
+<tr>
+<td>DEPREC</td>
+<td>Depreciation</td>
+</tr>
+<tr>
+<td>EV_SALESTR</td>
+<td>EV to Trailing Sales Ratio</td>
+</tr>
+<tr>
+<td>EPS_GRO</td>
+<td>Growth in Earnings Per Share</td>
+</tr>
+<tr>
+<td>P_BV</td>
+<td>Price to Book Value Ratio</td>
+</tr>
+<tr>
+<td>NET_INC_TRAIL</td>
+<td>Trailing Net Income</td>
+</tr>
+<tr>
+<td>PE_TRAIL</td>
+<td>Trailing PE Ratio</td>
+</tr>
+<tr>
+<td>OP_MARG</td>
+<td>Pre-Tax Operating Margin</td>
+</tr>
+<tr>
+<td>FIRM_VAL</td>
+<td>Firm Value</td>
+</tr>
+<tr>
+<td>STDEV</td>
+<td>3-year Standard Deviation of Stock Price</td>
+</tr>
+<tr>
+<td>TRAD_VOL</td>
+<td>Trading Volume</td>
+</tr>
+<tr>
+<td>CASH</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td>DIV_YLD</td>
+<td>Dividend Yield</td>
+</tr>
+<tr>
+<td>REV_LAST</td>
+<td>Revenues</td>
+</tr>
+<tr>
+<td>NET_INC</td>
+<td>Net Income</td>
+</tr>
+<tr>
+<td>EV_BV</td>
+<td>EV to Book Value Ratio</td>
+</tr>
+<tr>
+<td>REINV</td>
+<td>Reinvestment Amount</td>
+</tr>
+<tr>
+<td>EBIT</td>
+<td>Earnings Before Interest and Taxes</td>
+</tr>
+<tr>
+<td>EV_CAP</td>
+<td>EV to Invested Capital Ratio</td>
+</tr>
+<tr>
+<td>PAYOUT</td>
+<td>Payout Ratio</td>
+</tr>
+<tr>
+<td>HILO</td>
+<td>Hi-Lo Risk</td>
+</tr>
+<tr>
+<td>ALLFINANCIALRATIOS</td>
+<td>All Financial Ratios</td>
+</tr>
+<tr>
+<td>SGA</td>
+<td>Sales General and Administration Expenses</td>
+</tr>
+<tr>
+<td>EV</td>
+<td>Enterprise Value</td>
+</tr>
+<tr>
+<td>NCWC</td>
+<td>Non-Cash Working Capital</td>
+<tr>
+eof
