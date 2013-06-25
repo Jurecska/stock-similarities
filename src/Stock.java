@@ -17,11 +17,12 @@ public class Stock {
 	public Stock(String ticker, String company, String priceCode,
 			String csvLocation, boolean active) 
 	{
+		System.out.println("Creating " + ticker);
 		this.ticker = ticker;
 		this.company = company;
 		this.priceCode = priceCode;
 		this.active = active;
-		attributes = new AttributeMap(csvLocation);
+		attributes = new AttributeMap(ticker);
 	}
 	
 	public String getTicker() 

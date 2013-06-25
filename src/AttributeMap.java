@@ -7,38 +7,38 @@ import java.util.HashMap;
 
 public class AttributeMap {
 
-	// Holds the ratios pulled from the csv
+	// Maps a date to a ratio
 	private HashMap<String, RatioHistory> attributeToRatioHistoryMap;
 	
-	public AttributeMap(String csvLocation) {
+	public AttributeMap(String ticker) {
 		attributeToRatioHistoryMap = new HashMap<String, RatioHistory>();
 		for(int i = 0; i < 70; i++)
 			attributeToRatioHistoryMap.put(Constants.ratioCodes[i], new RatioHistory());
-		try {
-			URL url12 = new URL(
-					"http://www.quandl.com/api/v1/datasets/" + csvLocation + ".csv");
-			URLConnection urlConn = url12.openConnection();
-			InputStreamReader inStream = new InputStreamReader(
-					urlConn.getInputStream());
-			BufferedReader buff = new BufferedReader(inStream);
-			String content = buff.readLine();
-			content = buff.readLine();
-			System.out.println(content);
-			String[] attributeValues = content.split(",", 70);
-			String date = attributeValues[0];
-			System.out.println("Date: " + date);
-			for(int i = 1; i < 71; i++)
+		for(String attribute : attributeToRatioHistoryMap.keySet())
+		{
+			RatioHistory temp = attributeToRatioHistoryMap.get(attribute);
+			try 
 			{
-				RatioHistory temp = attributeToRatioHistoryMap.get(Constants.ratioCodes[i]);
-				temp.add(date, new Double(attributeValues[i]));
+				URL url = new URL(
+						"http://www.quandl.com/api/v1/datasets/OFDP/DMDRN_" + ticker + "_" + attribute + ".csv");
+				URLConnection urlConn = url.openConnection();
+				Thread.sleep(1000);
+				InputStreamReader inStream = new InputStreamReader(
+						urlConn.getInputStream());
+				BufferedReader buff = new BufferedReader(inStream);
+				String content = buff.readLine();
+				content = buff.readLine();
+				System.out.println(attribute + ":" + content);
+				String[] attributeValues = content.split(",");
+				temp.add(attributeValues[0], new Double(attributeValues[1]));
 				System.out.println("printing TEMP!!!");
 				temp.print();
-				attributeToRatioHistoryMap.put(Constants.ratioCodes[i], temp);
+				attributeToRatioHistoryMap.put(attribute, temp);
 			}
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+			}
 		}
 		//TEST: PRINT THE MAP
 		for(String key : attributeToRatioHistoryMap.keySet())
@@ -47,5 +47,5 @@ public class AttributeMap {
 			attributeToRatioHistoryMap.get(key).print();
 		}
 	}
-
+	
 }

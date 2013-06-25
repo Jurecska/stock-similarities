@@ -30,7 +30,7 @@ public class Constants {
 				i++;
 			}
 		}
-		for(i = 0; i < 70; i++)
-			System.out.println(ratioCodes[i] + " : " + ratioDefinitions[i]);
+//		for(i = 0; i < 70; i++)
+//			System.out.println(ratioCodes[i] + " : " + ratioDefinitions[i]);
 	}
 }
