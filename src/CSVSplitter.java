@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Scanner;
 
 /**
  * A class for splitting up csv files quickly. Currently only used for testing.
@@ -15,18 +15,12 @@ public class CSVSplitter {
 	{
 		try 
 		{
-			URL url12 = new URL(
-					"http://finance.yahoo.com/d/quotes.csv?s=AAPL+GOOG+MSFT&f=nab");
-			URLConnection urlConn = url12.openConnection();
-			InputStreamReader inStream = new InputStreamReader(
-					urlConn.getInputStream());
-			BufferedReader buff = new BufferedReader(inStream);
-			String content = buff.readLine();
-			content = buff.readLine();
+			Scanner s = new Scanner(new File("companylist.csv"));
+			String content = s.nextLine();
 			while(content != null)
 			{
 				System.out.println(content);
-				content = buff.readLine();
+				content = s.nextLine();
 			}
 		}
 		catch (Exception e) 

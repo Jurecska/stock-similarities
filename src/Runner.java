@@ -15,7 +15,7 @@ public class Runner
 		Constants.initializeCodesAndDefinitions();
 		Database.generateDatabase();
 		Stock aapl = Database.getStock("AAPL");
-		System.out.println(aapl.getCompany());
+		System.out.println(aapl.getCompanyName());
 	}
 	
 }

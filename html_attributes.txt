@@ -1,0 +1,87 @@
+<B>a </B> </TD><TD><font face=times size=-1>  Ask </TD><TD><font face=courier>
+<B>a2</B> </TD><TD><font face=times size=-1>  Average Daily Volume </TD><TD><font face=courier>
+<B>a5</B> </TD><TD><font face=times size=-1>  Ask Size </TD><TR><TD><font face=courier>
+<B>b </B> </TD><TD><font face=times size=-1>  Bid </TD><TD><font face=courier>
+<B>b2</B> </TD><TD><font face=times size=-1>  Ask (Real-time) </TD><TD><font face=courier>
+<B>b3</B> </TD><TD><font face=times size=-1>  Bid (Real-time) </TD><TR><TD><font face=courier>
+<B>b4</B> </TD><TD><font face=times size=-1>  Book Value </TD><TD><font face=courier>
+<B>b6</B> </TD><TD><font face=times size=-1>  Bid Size </TD><TD><font face=courier>
+<B>c </B> </TD><TD><font face=times size=-1>  Change & Percent Change </TD><TR><TD><font face=courier>
+<B>c1</B> </TD><TD><font face=times size=-1>  Change </TD><TD><font face=courier>
+<B>c3</B> </TD><TD><font face=times size=-1>  Commission </TD><TD><font face=courier>
+<B>c6</B> </TD><TD><font face=times size=-1>  Change (Real-time) </TD><TR><TD><font face=courier>
+<B>c8</B> </TD><TD><font face=times size=-1>  After Hours Change (Real-time) </TD><TD><font face=courier>
+<B>d </B> </TD><TD><font face=times size=-1>  Dividend/Share </TD><TD><font face=courier>
+<B>d1</B> </TD><TD><font face=times size=-1>  Last Trade Date </TD><TR><TD><font face=courier>
+<B>d2</B> </TD><TD><font face=times size=-1>  Trade Date </TD><TD><font face=courier>
+<B>e </B> </TD><TD><font face=times size=-1>  Earnings/Share </TD><TD><font face=courier>
+<B>e1</B> </TD><TD><font face=times size=-1>  Error Indication (returned for symbol changed / invalid) </TD><TR><TD><font face=courier>
+<B>e7</B> </TD><TD><font face=times size=-1>  EPS Estimate Current Year </TD><TD><font face=courier>
+<B>e8</B> </TD><TD><font face=times size=-1>  EPS Estimate Next Year </TD><TD><font face=courier>
+<B>e9</B> </TD><TD><font face=times size=-1>  EPS Estimate Next Quarter </TD><TR><TD><font face=courier>
+<B>f6</B> </TD><TD><font face=times size=-1>  Float Shares </TD><TD><font face=courier>
+<B>g </B> </TD><TD><font face=times size=-1>  Day's Low </TD><TD><font face=courier>
+<B>h </B> </TD><TD><font face=times size=-1>  Day's High </TD><TR><TD><font face=courier>
+<B>j </B> </TD><TD><font face=times size=-1>  52-week Low </TD><TD><font face=courier>
+<B>k </B> </TD><TD><font face=times size=-1>  52-week High </TD><TD><font face=courier>
+<B>g1</B> </TD><TD><font face=times size=-1>  Holdings Gain Percent </TD><TR><TD><font face=courier>
+<B>g3</B> </TD><TD><font face=times size=-1>  Annualized Gain </TD><TD><font face=courier>
+<B>g4</B> </TD><TD><font face=times size=-1>  Holdings Gain </TD><TD><font face=courier>
+<B>g5</B> </TD><TD><font face=times size=-1>  Holdings Gain Percent (Real-time) </TD><TR><TD><font face=courier>
+<B>g6</B> </TD><TD><font face=times size=-1>  Holdings Gain (Real-time) </TD><TD><font face=courier>
+<B>i </B> </TD><TD><font face=times size=-1>  More Info </TD><TD><font face=courier>
+<B>i5</B> </TD><TD><font face=times size=-1>  Order Book (Real-time) </TD><TR><TD><font face=courier>
+<B>j1</B> </TD><TD><font face=times size=-1>  Market Capitalization </TD><TD><font face=courier>
+<B>j3</B> </TD><TD><font face=times size=-1>  Market Cap (Real-time) </TD><TD><font face=courier>
+<B>j4</B> </TD><TD><font face=times size=-1>  EBITDA </TD><TR><TD><font face=courier>
+<B>j5</B> </TD><TD><font face=times size=-1>  Change From 52-week Low </TD><TD><font face=courier>
+<B>j6</B> </TD><TD><font face=times size=-1>  Percent Change From 52-week Low </TD><TD><font face=courier>
+<B>k1</B> </TD><TD><font face=times size=-1>  Last Trade (Real-time) With Time </TD><TR><TD><font face=courier>
+<B>k2</B> </TD><TD><font face=times size=-1>  Change Percent (Real-time) </TD><TD><font face=courier>
+<B>k3</B> </TD><TD><font face=times size=-1>  Last Trade Size </TD><TD><font face=courier>
+<B>k4</B> </TD><TD><font face=times size=-1>  Change From 52-week High </TD><TR><TD><font face=courier>
+<B>k5</B> </TD><TD><font face=times size=-1>  Percebt Change From 52-week High </TD><TD><font face=courier>
+<B>l </B> </TD><TD><font face=times size=-1>  Last Trade (With Time) </TD><TD><font face=courier>
+<B>l1</B> </TD><TD><font face=times size=-1>  Last Trade (Price Only) </TD><TR><TD><font face=courier>
+<B>l2</B> </TD><TD><font face=times size=-1>  High Limit </TD><TD><font face=courier>
+<B>l3</B> </TD><TD><font face=times size=-1>  Low Limit </TD><TD><font face=courier>
+<B>m </B> </TD><TD><font face=times size=-1>  Day's Range </TD><TR><TD><font face=courier>
+<B>m2</B> </TD><TD><font face=times size=-1>  Day's Range (Real-time) </TD><TD><font face=courier>
+<B>m3</B> </TD><TD><font face=times size=-1>  50-day Moving Average </TD><TD><font face=courier>
+<B>m4</B> </TD><TD><font face=times size=-1>  200-day Moving Average </TD><TR><TD><font face=courier>
+<B>m5</B> </TD><TD><font face=times size=-1>  Change From 200-day Moving Average </TD><TD><font face=courier>
+<B>m6</B> </TD><TD><font face=times size=-1>  Percent Change From 200-day Moving Average </TD><TD><font face=courier>
+<B>m7</B> </TD><TD><font face=times size=-1>  Change From 50-day Moving Average </TD><TR><TD><font face=courier>
+<B>m8</B> </TD><TD><font face=times size=-1>  Percent Change From 50-day Moving Average </TD><TD><font face=courier>
+<B>n </B> </TD><TD><font face=times size=-1>  Name </TD><TD><font face=courier>
+<B>n4</B> </TD><TD><font face=times size=-1>  Notes </TD><TR><TD><font face=courier>
+<B>o </B> </TD><TD><font face=times size=-1>  Open </TD><TD><font face=courier>
+<B>p </B> </TD><TD><font face=times size=-1>  Previous Close </TD><TD><font face=courier>
+<B>p1</B> </TD><TD><font face=times size=-1>  Price Paid </TD><TR><TD><font face=courier>
+<B>p2</B> </TD><TD><font face=times size=-1>  Change in Percent </TD><TD><font face=courier>
+<B>p5</B> </TD><TD><font face=times size=-1>  Price/Sales </TD><TD><font face=courier>
+<B>p6</B> </TD><TD><font face=times size=-1>  Price/Book </TD><TR><TD><font face=courier>
+<B>q </B> </TD><TD><font face=times size=-1>  Ex-Dividend Date </TD><TD><font face=courier>
+<B>r </B> </TD><TD><font face=times size=-1>  P/E Ratio </TD><TD><font face=courier>
+<B>r1</B> </TD><TD><font face=times size=-1>  Dividend Pay Date </TD><TR><TD><font face=courier>
+<B>r2</B> </TD><TD><font face=times size=-1>  P/E Ratio (Real-time) </TD><TD><font face=courier>
+<B>r5</B> </TD><TD><font face=times size=-1>  PEG Ratio </TD><TD><font face=courier>
+<B>r6</B> </TD><TD><font face=times size=-1>  Price/EPS Estimate Current Year </TD><TR><TD><font face=courier>
+<B>r7</B> </TD><TD><font face=times size=-1>  Price/EPS Estimate Next Year </TD><TD><font face=courier>
+<B>s </B> </TD><TD><font face=times size=-1>  Symbol </TD><TD><font face=courier>
+<B>s1</B> </TD><TD><font face=times size=-1>  Shares Owned </TD><TR><TD><font face=courier>
+<B>s7</B> </TD><TD><font face=times size=-1>  Short Ratio </TD><TD><font face=courier>
+<B>t1</B> </TD><TD><font face=times size=-1>  Last Trade Time </TD><TD><font face=courier>
+<B>t6</B> </TD><TD><font face=times size=-1>  Trade Links </TD><TR><TD><font face=courier>
+<B>t7</B> </TD><TD><font face=times size=-1>  Ticker Trend </TD><TD><font face=courier>
+<B>t8</B> </TD><TD><font face=times size=-1>  1 yr Target Price </TD><TD><font face=courier>
+<B>v </B> </TD><TD><font face=times size=-1>  Volume </TD><TR><TD><font face=courier>
+<B>v1</B> </TD><TD><font face=times size=-1>  Holdings Value </TD><TD><font face=courier>
+<B>v7</B> </TD><TD><font face=times size=-1>  Holdings Value (Real-time) </TD><TD><font face=courier>
+<B>w </B> </TD><TD><font face=times size=-1>  52-week Range </TD><TR><TD><font face=courier>
+<B>w1</B> </TD><TD><font face=times size=-1>  Day's Value Change </TD><TD><font face=courier>
+<B>w4</B> </TD><TD><font face=times size=-1>  Day's Value Change (Real-time) </TD><TD><font face=courier>
+<B>x </B> </TD><TD><font face=times size=-1>  Stock Exchange </TD><TR><TD><font face=courier>
+<B>y </B> </TD><TD><font face=times size=-1>  Dividend Yield </TD><TD>
+eof
+eof

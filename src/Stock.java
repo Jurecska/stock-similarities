@@ -9,19 +9,14 @@
 public class Stock {
 	
 	private String ticker;
-	private String company;
-	private String priceCode;
-	private boolean active;
+	private String companyName;
 	private AttributeMap attributes;
 
-	public Stock(String ticker, String company, String priceCode,
-			String csvLocation, boolean active) 
+	public Stock(String ticker, String companyName) 
 	{
-		System.out.println("Creating " + ticker);
+		System.out.println("Creating " + ticker + " " + companyName);
 		this.ticker = ticker;
-		this.company = company;
-		this.priceCode = priceCode;
-		this.active = active;
+		this.companyName = companyName;
 		attributes = new AttributeMap(ticker);
 	}
 	
@@ -30,19 +25,9 @@ public class Stock {
 		return ticker;
 	}
 
-	public String getCompany() 
+	public String getCompanyName() 
 	{
-		return company;
-	}
-
-	public String getPriceCode() 
-	{
-		return priceCode;
-	}
-	
-	public boolean isActive() 
-	{
-		return active;
+		return companyName;
 	}
 
 }

@@ -7,44 +7,32 @@ import java.util.HashMap;
 
 public class AttributeMap {
 
-	// Maps a date to a ratio
-	private HashMap<String, RatioHistory> attributeToRatioHistoryMap;
+	// Maps an attribute name to a value
+	private HashMap<String, String> map;
 	
 	public AttributeMap(String ticker) {
-		attributeToRatioHistoryMap = new HashMap<String, RatioHistory>();
-		for(int i = 0; i < 70; i++)
-			attributeToRatioHistoryMap.put(Constants.ratioCodes[i], new RatioHistory());
-		for(String attribute : attributeToRatioHistoryMap.keySet())
+		map = new HashMap<String, String>();
+		for(String abbreviation : Constants.attributeAbbreviations())
 		{
-			RatioHistory temp = attributeToRatioHistoryMap.get(attribute);
 			try 
 			{
 				URL url = new URL(
-						"http://www.quandl.com/api/v1/datasets/OFDP/DMDRN_" + ticker + "_" + attribute + ".csv");
+						"http://finance.yahoo.com/d/quotes.csv?s=A+" + ticker + "&f=" + abbreviation);
 				URLConnection urlConn = url.openConnection();
-				Thread.sleep(1000);
 				InputStreamReader inStream = new InputStreamReader(
 						urlConn.getInputStream());
 				BufferedReader buff = new BufferedReader(inStream);
 				String content = buff.readLine();
 				content = buff.readLine();
-				System.out.println(attribute + ":" + content);
+				System.out.println(Constants.attributeAbbreviationsToNames.get(abbreviation) + ": " + content);
+				if(content == null)
+					break;
 				String[] attributeValues = content.split(",");
-				temp.add(attributeValues[0], new Double(attributeValues[1]));
-				System.out.println("printing TEMP!!!");
-				temp.print();
-				attributeToRatioHistoryMap.put(attribute, temp);
 			}
 			catch (Exception e) 
 			{
 				e.printStackTrace();
 			}
-		}
-		//TEST: PRINT THE MAP
-		for(String key : attributeToRatioHistoryMap.keySet())
-		{
-			System.out.println("Attribute " + key + ":");
-			attributeToRatioHistoryMap.get(key).print();
 		}
 	}
 	
