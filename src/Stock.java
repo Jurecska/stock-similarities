@@ -29,5 +29,11 @@ public class Stock {
 	{
 		return companyName;
 	}
+	
+	public void print()
+	{
+		System.out.println("Printing attributes for " + ticker);
+		attributes.print();
+	}
 
 }

@@ -35,7 +35,7 @@ public class Constants {
 				String attributeAbbreviation = line.substring(3, line.indexOf("<", 3));
 				String attributeName = line.substring(46, line.indexOf("<", 46));
 				attributeAbbreviationsToNames.put(attributeAbbreviation, attributeName);
-				System.out.println(attributeAbbreviation + ":" + attributeName);
+//				System.out.println(attributeAbbreviation + ":" + attributeName);
 				line = scan.nextLine();
 			}
 		}
