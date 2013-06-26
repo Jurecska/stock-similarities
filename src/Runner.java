@@ -1,6 +1,10 @@
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import pojos.Constants;
+
+import database.Database;
+
 /**
  
  * The Runner class for StockSimilarities.  This class contains the user interface, which can be used to query the system.
