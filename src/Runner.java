@@ -21,7 +21,7 @@ public class Runner
 			printConsoleOptions();
 			String input = scan.nextLine();
 			if(input.equals("load everything"))
-				Database.generateDatabase();
+				Database.loadAllStocks();
 			else if(input.startsWith("load"))
 				Database.load(input.substring(5, input.length()));
 			else if(input.startsWith("print_attributes"))

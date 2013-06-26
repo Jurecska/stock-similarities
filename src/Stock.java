@@ -1,6 +1,6 @@
 
 /**
- * Class for Stock objects.
+ * Class for Stock objects.  A Stock has a map of attributes, which can be used to construct attribute vectors.
  * 
  * @author jeffreymeyerson
  *
@@ -11,6 +11,7 @@ public class Stock {
 	private String ticker;
 	private String companyName;
 	private AttributeMap attributes;
+	private AttributeVector attributeVector;
 
 	public Stock(String ticker, String companyName) 
 	{
@@ -18,6 +19,7 @@ public class Stock {
 		this.ticker = ticker;
 		this.companyName = companyName;
 		attributes = new AttributeMap(ticker);
+		attributeVector = ParserVectorizer.generateAttributeVector(attributes);
 	}
 	
 	public String getTicker() 
@@ -33,7 +35,7 @@ public class Stock {
 	public void print()
 	{
 		System.out.println("Printing attributes for " + ticker);
-		attributes.print();
+		attributes.printMap();
 	}
 
 }
