@@ -41,7 +41,7 @@ public class Runner
 			else if(input.startsWith("load"))
 				Database.load(input.substring(5, input.length()));
 			else if(input.startsWith("print_attribute_map"))
-				Database.printAttributes(input.substring(17, input.length()));
+				Database.printAttributes(input.split(" ")[1]);
 			else if(input.startsWith("print_vector"))
 				Database.printVector(input.substring(13, input.length()));
 			else if(input.startsWith("measure_similarity"))

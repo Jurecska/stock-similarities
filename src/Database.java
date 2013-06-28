@@ -18,7 +18,7 @@ import vector.AttributeVector;
 public class Database 
 {
 	
-	static HashMap<String, Stock> stockMap = new HashMap<String, Stock>();
+	public static HashMap<String, Stock> stockMap = new HashMap<String, Stock>();
 	
 	/**
 	 * Load all stocks into memory
@@ -51,7 +51,8 @@ public class Database
 	private static synchronized void parseAndMap(String companyInfo)
 	{
 		String[] arr = companyInfo.split(",", 3);
-		stockMap.put(arr[0], new Stock(arr[0], arr[1]));
+		Stock stock = new Stock(arr[0].replace("\"", ""), arr[1].replace("\"", ""));
+		stockMap.put(stock.getTicker(), stock);
 	}
 	
 	public static Stock getStock(String ticker)
@@ -88,14 +89,15 @@ public class Database
 	}
 
 	public static void printAttributes(String ticker) {
-		if(stockMap.containsKey(ticker))
+		System.out.println("keyset: " + stockMap.keySet() + " parameter: " + ticker);
+		if(!stockMap.containsKey(ticker))
 			System.out.println(ticker + " information is not in memory.");
 		else
 			stockMap.get(ticker).getAttributeMap().printMap();
 	}
 
 	public static void printVector(String ticker) {
-		if(stockMap.containsKey(ticker))
+		if(!stockMap.containsKey(ticker))
 			System.out.println(ticker + " information is not in memory.");
 		else
 			stockMap.get(ticker).getVector().print();

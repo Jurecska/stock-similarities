@@ -19,7 +19,7 @@ public class Stock {
 
 	public Stock(String ticker, String companyName) 
 	{
-		System.out.println("Creating " + ticker + " " + companyName);
+		System.out.println("Creating " + ticker + " " + companyName + "...");
 		this.ticker = ticker;
 		this.companyName = companyName;
 		attributeMap = new AttributeMap(ticker);
