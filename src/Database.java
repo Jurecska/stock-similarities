@@ -1,7 +1,11 @@
 
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Scanner;
+
+import pojos.Stock;
+import vector.AttributeVector;
 
 /**
  * The singleton CSVDatabase for StockSimilarities.  A CSVDatabase pulls the csv data, maps a company to an object,
@@ -46,7 +50,7 @@ public class Database
 	 */
 	private static synchronized void parseAndMap(String companyInfo)
 	{
-		String[] arr = companyInfo.split(",", 2);
+		String[] arr = companyInfo.split(",", 3);
 		stockMap.put(arr[0], new Stock(arr[0], arr[1]));
 	}
 	
@@ -68,7 +72,6 @@ public class Database
 			String companyInfo = s.nextLine();
 			while(!companyInfo.substring(1, 6).contains(ticker) && s.hasNext())
 				companyInfo = s.nextLine();  // Scan the csv file until you find the company
-			System.out.println(companyInfo); // Print the basic details of the company
 			if(companyInfo == "eof")
 			{
 				System.out.println("Company not found.");
@@ -88,7 +91,20 @@ public class Database
 		if(stockMap.containsKey(ticker))
 			System.out.println(ticker + " information is not in memory.");
 		else
-			stockMap.get(ticker).print();
+			stockMap.get(ticker).getAttributeMap().printMap();
+	}
+
+	public static void printVector(String ticker) {
+		if(stockMap.containsKey(ticker))
+			System.out.println(ticker + " information is not in memory.");
+		else
+			stockMap.get(ticker).getVector().print();
+	}
+
+	public static double measureSimilarities(String stockName1, String stockName2) {
+		AttributeVector v1 = stockMap.get(stockName1).getVector();
+		AttributeVector v2 = stockMap.get(stockName2).getVector();
+		return vector.Utilities.cosineSimilarity(v1, v2);
 	}
 
 }

@@ -33,7 +33,6 @@ public class AttributeMap {
 				String statisticValue = buff.readLine();
 				statisticValue = buff.readLine();
 				String statisticName = Constants.attributeAbbreviationsToNames.get(abbreviation);
-				System.out.println(statisticName + ": " + statisticValue);
 				if (statisticValue == null)
 					break;
 				rawAttributes.put(statisticName, statisticValue);
@@ -41,22 +40,19 @@ public class AttributeMap {
 				e.printStackTrace();
 			}
 		}
-		printMap();
 	}
 
 	public void printMap() {
-		System.out.println("Printing AttributeMap");
+		System.out.println("Attributes for " + rawAttributes.get("Symbol "));
 		for (String key : rawAttributes.keySet())
 			System.out.println(key + " : " + rawAttributes.get(key));
 	}
 
 	public Collection<String> keySet() {
-		// TODO Auto-generated method stub
 		return rawAttributes.keySet();
 	}
 
 	public String get(String attributeName) {
-		// TODO Auto-generated method stub
 		return rawAttributes.get(attributeName);
 	}
 

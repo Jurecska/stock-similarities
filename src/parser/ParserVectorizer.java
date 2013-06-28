@@ -20,9 +20,11 @@ public class ParserVectorizer {
 		for(String attribute : attributes)
 		{
 			String rawData = rawAttributes.get(attribute);
-			result.add(attribute, BasicRules.convertRaw(attribute, rawData));
+			Double convertedData = BasicRules.convertRaw(attribute, rawData);
+			if(!convertedData.equals(0.0))
+					result.add(attribute, convertedData);
 		}
-		System.out.println(attributes.toString());
+		result.print();
 		return result;
 	}
 

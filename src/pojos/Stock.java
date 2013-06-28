@@ -4,7 +4,7 @@ import vector.AttributeVector;
 
 
 /**
- * Class for Stock objects.  A Stock has a map of attributes, which can be used to construct attribute vectors.
+ * Class for Stock objects.  A Stock has a map of raw, unformatted attributes, which can be formatted to construct attribute vectors.
  * 
  * @author jeffreymeyerson
  *
@@ -14,7 +14,7 @@ public class Stock {
 	
 	private String ticker;
 	private String companyName;
-	private AttributeMap attributes;
+	private AttributeMap attributeMap;
 	private AttributeVector attributeVector;
 
 	public Stock(String ticker, String companyName) 
@@ -22,8 +22,8 @@ public class Stock {
 		System.out.println("Creating " + ticker + " " + companyName);
 		this.ticker = ticker;
 		this.companyName = companyName;
-		attributes = new AttributeMap(ticker);
-		attributeVector = ParserVectorizer.generateAttributeVector(attributes);
+		attributeMap = new AttributeMap(ticker);
+		attributeVector = ParserVectorizer.generateAttributeVector(attributeMap);
 	}
 	
 	public String getTicker() 
@@ -39,7 +39,15 @@ public class Stock {
 	public void print()
 	{
 		System.out.println("Printing attributes for " + ticker);
-		attributes.printMap();
+		attributeMap.printMap();
+	}
+
+	public AttributeVector getVector() {
+		return attributeVector;
+	}
+
+	public AttributeMap getAttributeMap() {
+		return attributeMap;
 	}
 
 }
