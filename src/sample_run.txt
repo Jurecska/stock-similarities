@@ -1,0 +1,36 @@
+tockSimilarities.  Here are your options:
+load <ticker> : loads all information about a stock into memory
+load_everything : load all companies into memory (takes awhile)
+print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
+print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
+measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+q : quit the system
+load AAPL
+Creating AAPL Apple Inc....
+Price/EPS Estimate Current Year  : 9.95
+Book Value  : 144.124
+Last Trade (Price Only)  : 393.9689
+Earnings/Share  : 41.896
+Last Trade Size  : 200.0
+Welcome to StockSimilarities.  Here are your options:
+load <ticker> : loads all information about a stock into memory
+load_everything : load all companies into memory (takes awhile)
+print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
+print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
+measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+q : quit the system
+print_vector AAPL
+Price/EPS Estimate Current Year  : 9.95
+Book Value  : 144.124
+Last Trade (Price Only)  : 393.9689
+Earnings/Share  : 41.896
+Last Trade Size  : 200.0
+Welcome to StockSimilarities.  Here are your options:
+load <ticker> : loads all information about a stock into memory
+load_everything : load all companies into memory (takes awhile)
+print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
+print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
+measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+q : quit the system
+measure_similarity AAPL AAPL
+275.7649975956495i
