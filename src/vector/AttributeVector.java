@@ -41,7 +41,7 @@ public class AttributeVector {
 	public double magnitude() {
 		Double sum = 0.0;
 		for(Double value : vector.values())
-			sum += value;
+			sum += value * value;
 		return Math.sqrt(sum);
 	}
 
