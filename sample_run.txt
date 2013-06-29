@@ -5,12 +5,12 @@ print_vector <ticker> : print the formatted stock vector for a ticker which has 
 print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
 measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
 q : quit the system
-load AAPL
-Creating AAPL Apple Inc....
-Price/EPS Estimate Current Year  : 9.95
-Book Value  : 144.124
-Last Trade (Price Only)  : 393.9689
-Earnings/Share  : 41.896
+load MSFT
+Creating MSFT Microsoft Corporation...
+Price/EPS Estimate Current Year  : 12.59
+Book Value  : 9.185
+Last Trade (Price Only)  : 34.545
+Earnings/Share  : 1.938
 Last Trade Size  : 200.0
 Welcome to StockSimilarities.  Here are your options:
 load <ticker> : loads all information about a stock into memory
@@ -19,12 +19,13 @@ print_vector <ticker> : print the formatted stock vector for a ticker which has 
 print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
 measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
 q : quit the system
-print_vector AAPL
-Price/EPS Estimate Current Year  : 9.95
+load AAPL
+Creating AAPL Apple Inc....
+Price/EPS Estimate Current Year  : 9.96
 Book Value  : 144.124
-Last Trade (Price Only)  : 393.9689
+Last Trade (Price Only)  : 396.53
 Earnings/Share  : 41.896
-Last Trade Size  : 200.0
+Last Trade Size  : 100.0
 Welcome to StockSimilarities.  Here are your options:
 load <ticker> : loads all information about a stock into memory
 load_everything : load all companies into memory (takes awhile)
@@ -33,4 +34,13 @@ print_attribute_map <ticker> : print all raw attributes of a stock which is in m
 measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
 q : quit the system
 measure_similarity AAPL AAPL
-275.7649975956495i
+1.0
+Welcome to StockSimilarities.  Here are your options:
+load <ticker> : loads all information about a stock into memory
+load_everything : load all companies into memory (takes awhile)
+print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
+print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
+measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+q : quit the system
+measure_similarity AAPL MSFT
+0.3971595715793979
