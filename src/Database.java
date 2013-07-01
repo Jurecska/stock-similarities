@@ -1,6 +1,7 @@
 
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -107,6 +108,13 @@ public class Database
 		AttributeVector v1 = stockMap.get(stockName1).getVector();
 		AttributeVector v2 = stockMap.get(stockName2).getVector();
 		return vector.Utilities.cosineSimilarity(v1, v2);
+	}
+
+	public static void visualizationTriangulation(String[] params) {
+		ArrayList<Stock> arr = new ArrayList<Stock>();
+		for(int i = 1; i < params.length; i++)
+			arr.add(stockMap.get(params[i]));
+		visualization.Controller.buildTriangle(arr);
 	}
 
 }
