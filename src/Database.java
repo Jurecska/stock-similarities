@@ -1,6 +1,7 @@
 
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -62,12 +63,30 @@ public class Database
 	}
 	
 	/**
-	 * Load a single stock into memory.
+	 * Load a stock into memory.  Horrible performance.
+	 * 
+	 * @param ticker
+	 */
+	public static void load(final String ticker)
+	{
+		Runnable run = new Runnable()
+		{
+			public void run()
+			{
+				loadHelper(ticker);
+			}
+		};
+		Thread thread = new Thread(run);
+		thread.start();
+	}
+	
+	/**
+	 * Helper for load.
 	 * 
 	 * @param ticker
 	 * @return whether or not the stock was present in the list.  Should not ever be false.
 	 */
-	public static boolean load(String ticker) {
+	private static boolean loadHelper(String ticker) {
 		try 
 		{
 			Scanner s = new Scanner(new File("companylist.csv"));

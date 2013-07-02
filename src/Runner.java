@@ -40,7 +40,7 @@ public class Runner
 				keepGoing = false;
 			else if(input.equals("visualization"))
 			{
-				if(Database.stockMap.size() == 0)
+				if(Database.stockMap.size() != 0)
 					enterVisualizationMode();
 				else
 					System.out.println("Please load a stock before entering visualization mode.");
@@ -66,8 +66,8 @@ public class Runner
 		
 	}
 	
-	private static void printConsoleOptions() {
-		System.out.println("Welcome to StockSimilarities.\nHere are your options:\n");
+	private static synchronized void printConsoleOptions() {
+		System.out.println("\nWelcome to StockSimilarities.\nHere are your options:\n");
 		System.out.println("load <ticker> : loads all information about a stock into memory");
 		System.out.println("load_everything : load all companies into memory (takes awhile)");
 		System.out.println("print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory");
@@ -77,7 +77,7 @@ public class Runner
 		System.out.println("q : quit the system");		
 	}
 	
-	private static void printVisualizationOptions()
+	private static synchronized void printVisualizationOptions()
 	{
 		System.out.println("Visualization options:\n");
 		System.out.println("similarity_triangulation <ticker> <ticker> <ticker>: draw similarity triangle");

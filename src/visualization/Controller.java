@@ -1,5 +1,6 @@
 package visualization;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,16 +16,13 @@ public class Controller {
 	
 	public static void buildTriangle(ArrayList<Stock> stocks)
 	{
-		assert(stocks.size() == 3);
-		HashMap<String, Double> distances = new HashMap<String, Double>();
-		ArrayList<StockNode> stockNodes = new ArrayList<StockNode>();
-		StockNode x = 
-		for(int i = 0; i < 3; i++)
-		{
-			
+		
+		try {
+			ProcessingExporter.exportTriangle(new SimilarityTriangle(stocks));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-			
-		ProcessingExporter.exportTriangle(new SimilarityTriangle(stockNodes), distances);
 	}
 
 }

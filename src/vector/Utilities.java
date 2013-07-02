@@ -18,9 +18,13 @@ public class Utilities {
 	 */
 	public static double dotProduct(AttributeVector v1, AttributeVector v2)
 	{
-		double sum = 0;
+		double sum = 1;
 		for(String key : v1.attributeNames())
-			sum += v1.getValue(key) * v2.getValue(key);
+		{
+			boolean incompatible = (v1.getValue(key).equals(null) || v2.getValue(key).equals(null)) ? true : false;
+			if(!incompatible)
+				sum += v1.getValue(key) * v2.getValue(key);
+		}
 		return sum;
 	}
 	

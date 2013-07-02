@@ -1,6 +1,21 @@
 package visualization.SimilarityGraph.generated.preproc;
 
-import processing.core.PApplet;
+import processing.core.*; 
+import processing.xml.*; 
+
+import java.applet.*; 
+import java.awt.Dimension; 
+import java.awt.Frame; 
+import java.awt.event.MouseEvent; 
+import java.awt.event.KeyEvent; 
+import java.awt.event.FocusEvent; 
+import java.awt.Image; 
+import java.io.*; 
+import java.net.*; 
+import java.text.*; 
+import java.util.*; 
+import java.util.zip.*; 
+import java.util.regex.*; 
 
 public class SimilarityGraph extends PApplet {
 
@@ -14,9 +29,9 @@ public void draw(){
 	int borderMax = 500; 
 	
 	//length of lines (similarity)
-	int xy = 528;
-	int xz = 533;
-	int yz = 642;
+	int xy = 
+	int xz = 
+	int yz = 
 	
 	// length and width of nodes
 	int x = 100;
