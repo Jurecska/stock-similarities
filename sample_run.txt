@@ -1,46 +1,180 @@
-tockSimilarities.  Here are your options:
+
+Welcome to StockSimilarities.
+Here are your options:
+
 load <ticker> : loads all information about a stock into memory
 load_everything : load all companies into memory (takes awhile)
 print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
 print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
 measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
-q : quit the system
-load MSFT
-Creating MSFT Microsoft Corporation...
-Price/EPS Estimate Current Year  : 12.59
-Book Value  : 9.185
-Last Trade (Price Only)  : 34.545
-Earnings/Share  : 1.938
-Last Trade Size  : 200.0
-Welcome to StockSimilarities.  Here are your options:
-load <ticker> : loads all information about a stock into memory
-load_everything : load all companies into memory (takes awhile)
-print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
-print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
-measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+visualization : enter visualization mode
 q : quit the system
 load AAPL
+
+Welcome to StockSimilarities.
+Here are your options:
+
+load <ticker> : loads all information about a stock into memory
+load_everything : load all companies into memory (takes awhile)
+print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
+print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
+measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+visualization : enter visualization mode
+q : quit the system
 Creating AAPL Apple Inc....
-Price/EPS Estimate Current Year  : 9.96
+load MSFT
+
+Welcome to StockSimilarities.
+Here are your options:
+
+load <ticker> : loads all information about a stock into memory
+load_everything : load all companies into memory (takes awhile)
+print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
+print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
+measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+visualization : enter visualization mode
+q : quit the system
+load AMZN
+
+Welcome to StockSimilarities.
+Here are your options:
+
+load <ticker> : loads all information about a stock into memory
+load_everything : load all companies into memory (takes awhile)
+print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
+print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
+measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+visualization : enter visualization mode
+q : quit the system
+Error parsing Market Cap (Real-time) , cannot convert N/A
+Error parsing Last Trade Size , cannot convert 79,934
+Price/EPS Estimate Current Year  : 10.59
 Book Value  : 144.124
-Last Trade (Price Only)  : 396.53
+Last Trade (Price Only)  : 420.8
 Earnings/Share  : 41.896
-Last Trade Size  : 100.0
-Welcome to StockSimilarities.  Here are your options:
+Creating AMZN Amazon.com...
+Error parsing Market Cap (Real-time) , cannot convert N/A
+Error parsing Last Trade Size , cannot convert 51,666
+Price/EPS Estimate Current Year  : 218.25
+Book Value  : 18.532
+Last Trade (Price Only)  : 284.03
+Earnings/Share  : -0.192
+Creating MSFT Microsoft Corporation...
+Error parsing Market Cap (Real-time) , cannot convert N/A
+Error parsing Last Trade Size , cannot convert 587,566
+Price/EPS Estimate Current Year  : 12.34
+Book Value  : 9.185
+Last Trade (Price Only)  : 34.01
+Earnings/Share  : 1.938
+measure_similarity MSFT AAPL
+0.9487773944602984
+
+Welcome to StockSimilarities.
+Here are your options:
+
 load <ticker> : loads all information about a stock into memory
 load_everything : load all companies into memory (takes awhile)
 print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
 print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
 measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+visualization : enter visualization mode
 q : quit the system
-measure_similarity AAPL AAPL
-1.0
-Welcome to StockSimilarities.  Here are your options:
+measure_similarity AAPL AMZN
+0.7766864280064972
+
+Welcome to StockSimilarities.
+Here are your options:
+
 load <ticker> : loads all information about a stock into memory
 load_everything : load all companies into memory (takes awhile)
 print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
 print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
 measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+visualization : enter visualization mode
 q : quit the system
-measure_similarity AAPL MSFT
-0.3971595715793979
+measure_similarity MSFT AMZN
+0.9341696778035647
+
+Welcome to StockSimilarities.
+Here are your options:
+
+load <ticker> : loads all information about a stock into memory
+load_everything : load all companies into memory (takes awhile)
+print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory
+print_attribute_map <ticker> : print all raw attributes of a stock which is in memory
+measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors
+visualization : enter visualization mode
+q : quit the system
+visualization
+Visualization options:
+
+similarity_triangulation <ticker> <ticker> <ticker>: draw similarity triangle
+similarity_triangulation AAPL MSFT AMZN
+package visualization.SimilarityGraph.generated.preproc;
+
+import processing.core.PApplet;
+import processing.core.PFont;
+
+public class SimilarityGraph extends PApplet {
+	PFont f;
+public void setup(){ 
+	size(600,600); 
+	f = createFont("Papyrus", 16, true);
+} 
+ 
+public void draw(){
+	
+	textFont(f);		
+	
+	int borderMin = 50;
+	int borderMax = 500; 
+	
+	//length of lines (similarity)
+	int xy = 263;
+	int xz = 321;
+	int yz = 267;
+	
+	// length and width of nodes
+	int x = 10;
+	int y = 12;
+	int z = 218;
+
+
+	fill(255);
+	
+	// Pythag
+	int i = x / 2 + xz + z / 2;
+	int j = borderMin + x / 2 + z / 2;
+	int pythagXZ = (int)sqrt(i * i - j * j);
+	
+	int p1x = borderMin + x/2;
+	int p1y = borderMin;
+	int p2x = borderMin + x + xy;
+	int p2y = borderMin;
+	int p3x = borderMin;
+	int p3y = borderMin + pythagXZ;
+	
+	ellipse(borderMin, borderMin, x, x);
+	line(p1x, p1y, p2x, p2y);
+	ellipse(borderMin + x + xy + y / 2, borderMin, y, y);
+	ellipse(borderMin, borderMin + pythagXZ + z / 2, z, z);
+	line(p1x, p1y, p3x, p3y);
+	line(p2x, p2y, p3x, p3y);
+	
+	
+	fill(0);
+	text("AAPL",borderMin,borderMin);
+	text("MSFT",borderMin + x / 2 + xy + y,borderMin);
+	text("AMZN",borderMin,borderMin + pythagXZ);
+	
+} 
+    static public void main(String args[]) {
+        PApplet.main(new String[] { "--bgcolor=#ECE9D8", "SimilarityGraph" });
+    }
+}
+/**
+* Paste all preceding code into visualization.SimilarityGraph.generated.preproc
+**/
+Visualization options:
+
+similarity_triangulation <ticker> <ticker> <ticker>: draw similarity triangle
