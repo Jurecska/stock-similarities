@@ -3,7 +3,7 @@ void setup(){
 } 
  
 void draw(){
-	
+		
 	int borderMin = 30;
 	int borderMax = 500; 
 	
@@ -26,13 +26,13 @@ void draw(){
 	int p1y = borderMin;
 	int p2x = borderMin + x + xy;
 	int p2y = borderMin;
-	//int p3x =
-	//int p3y =
+	int p3x = borderMin;
+	int p3y = borderMin + pythagXZ;
 	
 	ellipse(borderMin, borderMin, x, x);
 	line(p1x, p1y, p2x, p2y);
 	ellipse(borderMin + x + xy + y / 2, borderMin, y, y);
-	//ellipse(borderMin + x / 2 + xy / 2, borderMin + pythagXZ, z, z);
-	//line(borderMin + x/2, borderMin, borderMin + x / 2 + xy / 2, borderMin + pythagXZ);
+	ellipse(borderMin, borderMin + pythagXZ + z / 2, z, z);
+	line(p1x, p1y, p3x, p3y);
 	
 } 

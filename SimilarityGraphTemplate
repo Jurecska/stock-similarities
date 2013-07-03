@@ -18,14 +18,14 @@ public void draw(){
 	int borderMax = 500; 
 	
 	//length of lines (similarity)
-	int xy = 267;
-	int xz = 263;
-	int yz = 321;
+	int xy = 
+	int xz = 
+	int yz = 
 	
 	// length and width of nodes
-	int x = 12;
-	int y = 218;
-	int z = 10;
+	int x = 
+	int y = 
+	int z = 
 
 
 	fill(255);
@@ -51,12 +51,15 @@ public void draw(){
 	
 	
 	fill(0);
-	text("MSFT",borderMin,borderMin);
-	text("AMZN",borderMin + x / 2 + xy + y,borderMin);
-	text("AAPL",borderMin,borderMin + pythagXZ);
+	text($ticker1,borderMin,borderMin);
+	text($ticker2,borderMin + x / 2 + xy + y,borderMin);
+	text($ticker3,borderMin,borderMin + pythagXZ);
 	
 } 
     static public void main(String args[]) {
         PApplet.main(new String[] { "--bgcolor=#ECE9D8", "SimilarityGraph" });
     }
 }
+/**
+* Paste all preceding code into visualization.SimilarityGraph.generated.preproc
+**/

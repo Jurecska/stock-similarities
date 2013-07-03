@@ -1,5 +1,6 @@
 package parser;
 
+
 /**
  * An example collection of rules for parsing and standardizing Yahoo Finance
  * text.
@@ -15,9 +16,10 @@ public class BasicRules {
 	 * @param raw
 	 * @return
 	 */
-	public static double convertRaw(String statisticName, String rawData) throws NumberFormatException{
+	public static double convertRaw(String statisticName, String rawData)
+			throws NumberFormatException {
 		Double result = 0.0;
-		try{
+		try {
 			if (statisticName.equals("Price/EPS Estimate Current Year "))
 				result = new Double(rawData);
 			else if (statisticName.equals("Book Value "))
@@ -28,11 +30,14 @@ public class BasicRules {
 				result = new Double(rawData);
 			else if (statisticName.equals("Earnings/Share "))
 				result = new Double(rawData);
+			else if (statisticName.equals("Market Cap (Real-time) "))
+				result = new Double(rawData);
+			else if (statisticName.equals("Market Capitalization "))
+				result = new Double(rawData);
+		} catch (NumberFormatException e) {
+			System.out.println("Error parsing " + statisticName
+					+ ", cannot convert " + rawData);
 		}
-		catch(NumberFormatException e)
-		{
-			System.out.println("Error parsing " + statisticName + ", cannot convert " + rawData);
-		}
-			return result;
-		}
+		return result;
+	}
 }
