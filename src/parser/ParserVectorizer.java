@@ -14,12 +14,20 @@ import vector.AttributeVector;
  */
 public class ParserVectorizer {
 
+	/**
+	 * Parses the raw attributes mapped to an AttributeMap, formats them for AttributeVector.  
+	 * 
+	 * TODO: Most attributes are currently not parsed correctly
+	 * 
+	 * @param rawAttributes
+	 * @return
+	 */
 	public static AttributeVector generateAttributeVector(AttributeMap rawAttributes) {
 		AttributeVector result = new AttributeVector();
-		Collection<String> attributes = rawAttributes.keySet();
+		Collection<String> attributes = rawAttributes.getAttributeNames();
 		for(String attribute : attributes)
 		{
-			String rawData = rawAttributes.get(attribute);
+			String rawData = rawAttributes.getAttributeValue(attribute);
 			Double convertedData = BasicRules.convertRaw(attribute, rawData);
 			if(!convertedData.equals(0.0))
 					result.add(attribute, convertedData);

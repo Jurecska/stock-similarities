@@ -14,9 +14,12 @@ import pojos.Stock;
  */
 public class Controller {
 	
+	/**
+	 * Asks the ProcessingExporter to build a similarity triangle
+	 * @param stocks
+	 */
 	public static void buildTriangle(ArrayList<Stock> stocks)
 	{
-		
 		try {
 			ProcessingExporter.exportTriangle(new SimilarityTriangle(sortBySimilarity(stocks)));
 		} catch (FileNotFoundException e) {
@@ -25,7 +28,12 @@ public class Controller {
 		}
 	}
 
-	//TODO refactor this garbage
+	/**
+	 * Sort a list of stocks in an order that leaves the two points of the hypotenuse as the last two.
+	 * 
+	 * @param stocks
+	 * @return
+	 */
 	private static ArrayList<Stock> sortBySimilarity(ArrayList<Stock> stocks) {
 		Stock a = stocks.get(0);
 		Stock b = stocks.get(1);

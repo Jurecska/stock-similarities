@@ -49,6 +49,10 @@ public class Runner
 		}
 	}
 
+	/**
+	 * Enters the visualization mode.
+	 * TODO: add more stuff to visualize
+	 */
 	private static void enterVisualizationMode() {
 		boolean keepGoing = true;
 		Scanner scan = new Scanner(System.in);
@@ -66,6 +70,9 @@ public class Runner
 		
 	}
 	
+	/**
+	 * Print the console options
+	 */
 	private static synchronized void printConsoleOptions() {
 		System.out.println("\nWelcome to StockSimilarities.\nHere are your options:\n");
 		System.out.println("load <ticker> : loads all information about a stock into memory");
@@ -77,6 +84,9 @@ public class Runner
 		System.out.println("q : quit the system");		
 	}
 	
+	/**
+	 * Print the options that are available after entering visualization mode.
+	 */
 	private static synchronized void printVisualizationOptions()
 	{
 		System.out.println("Visualization options:\n");

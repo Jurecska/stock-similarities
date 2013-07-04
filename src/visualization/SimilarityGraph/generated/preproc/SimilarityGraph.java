@@ -3,6 +3,12 @@ package visualization.SimilarityGraph.generated.preproc;
 import processing.core.PApplet;
 import processing.core.PFont;
 
+/**
+ * The SimilarityGraph class.  SimilarityGraph is generated from SimilarityGraphTemplate via the visualization functions of StockSimilarities.
+ * 
+ * @author jeffreymeyerson
+ *
+ */
 public class SimilarityGraph extends PApplet {
 	PFont f;
 public void setup(){ 

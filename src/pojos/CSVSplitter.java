@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 /**
- * A class for splitting up csv files quickly. Currently only used for testing.
+ * A class for splitting up csv files quickly. Only used for testing.
  * 
  * @author jeffreymeyerson
  * 

@@ -7,6 +7,15 @@ import java.net.URLConnection;
 import java.util.Collection;
 import java.util.HashMap;
 
+/**
+ * The AttributeMap class. An AttributeMap stores raw data about a company that
+ * has been mined from Yahoo Finance. An AttributeMap exists for each Stock, and
+ * serves as a data format between HTML and an AttributeVector
+ * 
+ * @author jeffreymeyerson
+ * 
+ */
+
 public class AttributeMap {
 
 	// Maps an attribute name to a value
@@ -32,7 +41,8 @@ public class AttributeMap {
 				BufferedReader buff = new BufferedReader(inStream);
 				String statisticValue = buff.readLine();
 				statisticValue = buff.readLine();
-				String statisticName = Constants.attributeAbbreviationsToNames.get(abbreviation);
+				String statisticName = Constants.attributeAbbreviationsToNames
+						.get(abbreviation);
 				if (statisticValue == null)
 					break;
 				rawAttributes.put(statisticName, statisticValue);
@@ -42,17 +52,31 @@ public class AttributeMap {
 		}
 	}
 
+	/**
+	 * Print the map
+	 */
 	public void printMap() {
 		System.out.println("Attributes for " + rawAttributes.get("Symbol "));
 		for (String key : rawAttributes.keySet())
 			System.out.println(key + " : " + rawAttributes.get(key));
 	}
 
-	public Collection<String> keySet() {
+	/**
+	 * Get all attribute names.
+	 * 
+	 * @return
+	 */
+	public Collection<String> getAttributeNames() {
 		return rawAttributes.keySet();
 	}
 
-	public String get(String attributeName) {
+	/**
+	 * Get the unformatted value mapped to by a specific attribute name
+	 * 
+	 * @param attributeName
+	 * @return
+	 */
+	public String getAttributeValue(String attributeName) {
 		return rawAttributes.get(attributeName);
 	}
 

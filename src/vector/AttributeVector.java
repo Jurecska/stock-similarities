@@ -3,8 +3,8 @@ import java.util.HashMap;
 import java.util.Set;
 
 /**
- * The AttributeVector class. An AttributeVector maps Stock attribute names to a
- * Double.
+ * The AttributeVector class. An AttributeVector maps Stock attribute names to
+ * Doubles.
  * 
  * @author jeffreymeyerson
  * 

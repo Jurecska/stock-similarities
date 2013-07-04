@@ -10,8 +10,8 @@ import pojos.Stock;
 import vector.AttributeVector;
 
 /**
- * The singleton CSVDatabase for StockSimilarities.  A CSVDatabase pulls the csv data, maps a company to an object,
- * and TODO provides an API for Classifiers to query into.
+ * The singleton Database for StockSimilarities.  The Database loads information from Yahoo finance into memory.
+ * 
  * 
  * @author Jeff
  *

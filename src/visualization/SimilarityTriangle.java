@@ -18,16 +18,20 @@ public class SimilarityTriangle {
 	public int xy;
 	public int xz;
 	public int yz;
+	
+	// stock names
 	public String xName;
 	public String yName;
 	public String zName;
+	
+	// integers to scale the size of a stock node by
 	public int xSize;
 	public int ySize;
 	public int zSize;
 
 	/**
 	 * A triangle of stocks with edge lengths proportional to their relative
-	 * similarities;
+	 * similarities (lower similarity, longer length)
 	 * 
 	 * @param stocks
 	 *            an array of three stocks; the last two stocks in the list
