@@ -23,7 +23,7 @@ public class Utilities {
 		{
 			Double value1 = v1.getValue(key);
 			Double value2 = v2.getValue(key);
-			boolean incompatible = (value1.equals(null) || value2.equals(null)) ? true : false;
+			boolean incompatible = (value1 == null || value2 == null) ? true : false;
 			if(!incompatible)
 				sum += v1.getValue(key) * v2.getValue(key);
 		}

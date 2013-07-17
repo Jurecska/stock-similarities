@@ -26,18 +26,20 @@ public class Runner
 		{
 			printConsoleOptions();
 			String input = scan.nextLine();
-			if(input.equals("load_tech"))
+			if(input.equals("ld_tech"))
 				Database.loadTech();
-			else if(input.startsWith("load_everything"))
+			else if(input.startsWith("ld_all"))
 				Database.loadEverything();
-			else if(input.startsWith("load"))
+			else if(input.startsWith("ld"))
 				Database.load(input.substring(5, input.length()));
-			else if(input.startsWith("print_attribute_map"))
+			else if(input.startsWith("print_atts"))
 				Database.printAttributes(input.split(" ")[1]);
-			else if(input.startsWith("print_vector"))
+			else if(input.startsWith("print_vect"))
 				Database.printVector(input.substring(13, input.length()));
-			else if(input.startsWith("measure_similarity"))
+			else if(input.startsWith("sim"))
 				System.out.println(Database.measureSimilarities(input.split(" ")[1], input.split(" ")[2]));
+			else if(input.startsWith("sr"))
+				sagerank.GraphFactory.sageRank(Database.getAllStocks());
 			else if(input.equals("q"))
 				keepGoing = false;
 			else if(input.equals("visualization"))
@@ -47,7 +49,12 @@ public class Runner
 				else
 					System.out.println("Please load a stock before entering visualization mode.");
 			}
-			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -76,14 +83,14 @@ public class Runner
 	 * Print the console options
 	 */
 	private static synchronized void printConsoleOptions() {
-		System.out.println("\nWelcome to StockSimilarities.\nHere are your options:\n");
-		System.out.println("load <ticker> : loads all information about a stock into memory");
-		System.out.println("load_tech : load {GOOG, AAPL, MSFT, AMZN, EBAY, INTC, QCOM, TSLA, NFLX, FB}");
-		System.out.println("load_everything : loads all stocks into memory (takes forever)");
-		System.out.println("print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory");
-		System.out.println("print_attribute_map <ticker> : print all raw attributes of a stock which is in memory");
-		System.out.println("measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors");
-		System.out.println("visualization : enter visualization mode");
+		System.out.println("ld <ticker> : loads all information about a stock into memory");
+		System.out.println("ld_tech : load {GOOG, AAPL, MSFT, AMZN, EBAY, INTC, QCOM, TSLA, NFLX, FB}");
+		System.out.println("all : loads all stocks into memory (takes forever)");
+		System.out.println("print_vect <ticker> : print the formatted stock vector for a ticker which has been loaded into memory");
+		System.out.println("print_atts <ticker> : print all raw attributes of a stock which is in memory");
+		System.out.println("sim <ticker> <ticker> : print the cosine similarity of two vectors");
+		System.out.println("vis : enter visualization mode");
+		System.out.println("sr : perform SageRank");
 		System.out.println("q : quit the system");		
 	}
 	

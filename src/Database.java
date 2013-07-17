@@ -57,6 +57,12 @@ public class Database
 		stockMap.put(stock.getTicker(), stock);
 	}
 	
+	/**
+	 * Get a stock from the StockMap.
+	 * 
+	 * @param ticker
+	 * @return
+	 */
 	public static Stock getStock(String ticker)
 	{
 		return stockMap.get(ticker);
@@ -142,7 +148,15 @@ public class Database
 	public static void loadTech() {
 		String[] tickers = {"AAPL", "MSFT", "AMZN", "EBAY", "INTC", "QCOM", "TSLA", "NFLX", "FB"};
 		for(String t : tickers)
-			loadHelper(t);
+			load(t);
+	}
+
+	/**
+	 * Get all the stocks that have been loaded into memory.
+	 * @return an ArrayList of all the stocks
+	 */
+	public static ArrayList<Stock> getAllStocks() {
+		return new ArrayList<Stock>(stockMap.values());
 	}
 
 }
