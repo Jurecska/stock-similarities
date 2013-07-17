@@ -21,7 +21,9 @@ public class Utilities {
 		double sum = 1;
 		for(String key : v1.attributeNames())
 		{
-			boolean incompatible = (v1.getValue(key).equals(null) || v2.getValue(key).equals(null)) ? true : false;
+			Double value1 = v1.getValue(key);
+			Double value2 = v2.getValue(key);
+			boolean incompatible = (value1.equals(null) || value2.equals(null)) ? true : false;
 			if(!incompatible)
 				sum += v1.getValue(key) * v2.getValue(key);
 		}

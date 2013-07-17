@@ -26,8 +26,10 @@ public class Runner
 		{
 			printConsoleOptions();
 			String input = scan.nextLine();
-			if(input.equals("load everything"))
-				Database.loadAllStocks();
+			if(input.equals("load_tech"))
+				Database.loadTech();
+			else if(input.startsWith("load_everything"))
+				Database.loadEverything();
 			else if(input.startsWith("load"))
 				Database.load(input.substring(5, input.length()));
 			else if(input.startsWith("print_attribute_map"))
@@ -76,7 +78,8 @@ public class Runner
 	private static synchronized void printConsoleOptions() {
 		System.out.println("\nWelcome to StockSimilarities.\nHere are your options:\n");
 		System.out.println("load <ticker> : loads all information about a stock into memory");
-		System.out.println("load_everything : load all companies into memory (takes awhile)");
+		System.out.println("load_tech : load {GOOG, AAPL, MSFT, AMZN, EBAY, INTC, QCOM, TSLA, NFLX, FB}");
+		System.out.println("load_everything : loads all stocks into memory (takes forever)");
 		System.out.println("print_vector <ticker> : print the formatted stock vector for a ticker which has been loaded into memory");
 		System.out.println("print_attribute_map <ticker> : print all raw attributes of a stock which is in memory");
 		System.out.println("measure_similarity <ticker> <ticker> : print the cosine similarity of two vectors");

@@ -25,7 +25,7 @@ public class Database
 	/**
 	 * Load all stocks into memory
 	 */
-	public synchronized static void loadAllStocks()
+	public synchronized static void loadEverything()
 	{
 		try 
 		{
@@ -134,6 +134,15 @@ public class Database
 		for(int i = 1; i < params.length; i++)
 			arr.add(stockMap.get(params[i]));
 		visualization.Controller.buildTriangle(arr);
+	}
+
+	/**
+	 * Loads GOOG, AAPL, MSFT, AMZN, EBAY, INTC, QCOM, TSLA, NFLX, FB
+	 */
+	public static void loadTech() {
+		String[] tickers = {"AAPL", "MSFT", "AMZN", "EBAY", "INTC", "QCOM", "TSLA", "NFLX", "FB"};
+		for(String t : tickers)
+			loadHelper(t);
 	}
 
 }
