@@ -1,8 +1,12 @@
 package sagerank;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import pojos.Edge;
 import pojos.StockNode;
@@ -15,18 +19,17 @@ import pojos.StockNode;
  */
 public class Graph {
 
-	// A map of StockNodes -> the sum of their edge weights
-	public HashMap<StockNode, Double> nodesToWeights;
+	private Set<StockNode> nodes;
 	
-	public Graph(ArrayList<StockNode> nodes) 
+	public Graph(ArrayList<StockNode> nodesList) 
 	{
-		nodesToWeights = new HashMap<StockNode, Double>();
+		nodes = new HashSet<StockNode>(nodesList);
 		for(StockNode node : nodes)
 		{
 			Double sum = 0.0;
 			for(Edge e : node.edges.values())
 				sum += e.similarity;
-			nodesToWeights.put(node, sum);
+			node.sumOfIncomingEdges = sum;
 		}
 		printRankedImportance();
 	}
@@ -34,8 +37,10 @@ public class Graph {
 	public void printRankedImportance()
 	{
 		System.out.println("Ranked Importance:");
-		for(Entry<StockNode, Double> e : nodesToWeights.entrySet())
-			System.out.println(e.getKey().ticker + " : " + e.getValue());
+		ArrayList<StockNode> nodeList = new ArrayList<StockNode>(nodes);
+		Collections.sort(nodeList);
+		for(int i = 0; i < nodeList.size(); i++)
+			System.out.println(nodeList.get(i).ticker + " : " + nodeList.get(i).sumOfIncomingEdges);
 	}
 
 }

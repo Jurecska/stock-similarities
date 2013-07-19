@@ -1,11 +1,11 @@
 
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
 
+import pojos.Constants;
 import pojos.Stock;
 import vector.AttributeVector;
 
@@ -20,12 +20,12 @@ import vector.AttributeVector;
 public class Database 
 {
 	
-	public static HashMap<String, Stock> stockMap = new HashMap<String, Stock>();
+	public static ConcurrentHashMap<String, Stock> stockMap = new ConcurrentHashMap<String, Stock>();
 	
 	/**
 	 * Load all stocks into memory
 	 */
-	public synchronized static void loadEverything()
+	public static void loadEverything()
 	{
 		try 
 		{
@@ -46,11 +46,11 @@ public class Database
 
 	/**
 	 * Parse a line of content and put it into the stock map.
+	 * @param ticker 
 	 * 
 	 * @param content
-	 * @return whether the stock was a new addition to the map
 	 */
-	private static synchronized void parseAndMap(String companyInfo)
+	private static void parseAndMap(String companyInfo)
 	{
 		String[] arr = companyInfo.split(",", 3);
 		Stock stock = new Stock(arr[0].replace("\"", ""), arr[1].replace("\"", ""));
@@ -97,14 +97,21 @@ public class Database
 		{
 			Scanner s = new Scanner(new File("companylist.csv"));
 			String companyInfo = s.nextLine();
-			while(!companyInfo.substring(1, 6).contains(ticker) && s.hasNext())
-				companyInfo = s.nextLine();  // Scan the csv file until you find the company
+			//TODO: Fix this hacky way of handling BELFB containing FB (that doesn't even accomplish its goal)
+			while(s.hasNextLine())
+			{
+				while(!companyInfo.substring(1, 6).contains(ticker) && s.hasNextLine())
+					companyInfo = s.nextLine();  // Scan the csv file until you find the company
+				String shouldBeTicker = companyInfo.split(",", 3)[0].replace("\"", "");
+				if(shouldBeTicker.equals(ticker))
+					break;
+			}
+			parseAndMap(companyInfo);
 			if(companyInfo == "eof")
 			{
 				System.out.println("Company not found.");
 				return false;
 			}
-			parseAndMap(companyInfo);
 			return true;
 		}
 		catch (Exception e) 
@@ -143,11 +150,10 @@ public class Database
 	}
 
 	/**
-	 * Loads GOOG, AAPL, MSFT, AMZN, EBAY, INTC, QCOM, TSLA, NFLX, FB
+	 * Loads GOOG, AAPL, MSFT, AMZN, EBAY, INTC, QCOM, TSLA, NFLX, BBRY
 	 */
 	public static void loadTech() {
-		String[] tickers = {"AAPL", "MSFT", "AMZN", "EBAY", "INTC", "QCOM", "TSLA", "NFLX", "FB"};
-		for(String t : tickers)
+		for(String t : Constants.techTickers)
 			load(t);
 	}
 

@@ -17,7 +17,11 @@ public class Constants {
 
 	// A list of attribute codes to their names
 	public static HashMap<String, String> attributeAbbreviationsToNames = new HashMap<String, String>();
+	
+	// Some NASDAQ tech stocks
+	public static String[] techTickers = {"AAPL", "GOOG", "MSFT", "AMZN", "EBAY", "INTC", "QCOM", "TSLA", "NFLX", "BBRY"};
 
+	
 	public static Collection<String> attributeAbbreviations() {
 		return attributeAbbreviationsToNames.keySet();
 	}

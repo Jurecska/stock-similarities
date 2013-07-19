@@ -8,14 +8,22 @@ import java.util.HashMap;
  * @author jeffreymeyerson
  *
  */
-public class StockNode {
+public class StockNode implements Comparable{
 
 
 	public String ticker;
 	public HashMap<String, Edge> edges;
+	public double sumOfIncomingEdges;
 	
 	public StockNode(String ticker) {
 		this.ticker = ticker;
 		edges = new HashMap<String, Edge>();
+		sumOfIncomingEdges = 0.0;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		StockNode n = (StockNode)o;
+		return sumOfIncomingEdges - n.sumOfIncomingEdges < 0 ? 1 : -1;
 	}
 }

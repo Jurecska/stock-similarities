@@ -84,7 +84,7 @@ public class Runner
 	 */
 	private static synchronized void printConsoleOptions() {
 		System.out.println("ld <ticker> : loads all information about a stock into memory");
-		System.out.println("ld_tech : load {GOOG, AAPL, MSFT, AMZN, EBAY, INTC, QCOM, TSLA, NFLX, FB}");
+		System.out.println("ld_tech : load {GOOG, AAPL, MSFT, AMZN, EBAY, INTC, QCOM, TSLA, NFLX, BBRY}");
 		System.out.println("all : loads all stocks into memory (takes forever)");
 		System.out.println("print_vect <ticker> : print the formatted stock vector for a ticker which has been loaded into memory");
 		System.out.println("print_atts <ticker> : print all raw attributes of a stock which is in memory");

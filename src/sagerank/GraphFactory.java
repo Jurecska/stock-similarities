@@ -33,6 +33,7 @@ public class GraphFactory {
 					node.edges.put(e.ticker1, e);
 				else if(e.ticker2.equals(node.ticker))
 					node.edges.put(e.ticker2, e);
+			nodes.add(node);
 		}
 		return new Graph(nodes);
 	}
