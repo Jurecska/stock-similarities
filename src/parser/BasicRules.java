@@ -22,6 +22,7 @@ public class BasicRules {
 			throws NumberFormatException {
 		Double result = 0.0;
 		try {
+			//TODO: Not 98% sure you can use negative numbers in CosSim, but if not then some of these could mess things up
 			if (statisticName.equals("Price/EPS Estimate Current Year "))
 				result = new Double(rawData);
 			else if (statisticName.equals("Book Value "))
@@ -68,9 +69,31 @@ public class BasicRules {
 				result = new Double(rawData);
 			else if (statisticName.equals("Market Capitalization "))
 				result = new Double(rawData);
+			else if (statisticName.equals("Short Ratio "))
+				result = new Double(rawData);
+			else if (statisticName.equals("Price/Book "))
+				result = new Double(rawData);
+			else if (statisticName.equals("Last Trade (Price Only) "))
+				result = new Double(rawData);
+			else if (statisticName.equals("Last Trade Size "))
+				result = new Double(rawData);
+			else if (statisticName.equals("Previous Close "))
+				result = new Double(rawData);
+			else if (statisticName.equals("52-week low "))
+				result = new Double(rawData);
+			else if (statisticName.equals("Change in Percent "))
+				result = new Double(rawData.substring(1, rawData.indexOf('%')));
+			else if (statisticName.equals("Change From 52-week Low "))
+				result = new Double(rawData);
+			else if (statisticName.equals("Percent Change From 50-day Moving Average "))
+				result = new Double(rawData.substring(1, rawData.indexOf('%')));
+			else if (statisticName.equals("Percent Change From 52-week High "))
+				result = new Double(rawData.substring(1, rawData.indexOf('%')));
+			else if (statisticName.equals("Percent Change From 200-day Moving Average "))
+				result = new Double(rawData.substring(1, rawData.indexOf('%')));
 		} catch (NumberFormatException e) {
 			System.out.println("Error parsing " + statisticName
-					+ ", cannot convert " + rawData);
+					+ ", cannot convert " + rawData + "to double");
 		}
 		return result;
 	}

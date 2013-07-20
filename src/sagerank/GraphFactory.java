@@ -29,10 +29,8 @@ public class GraphFactory {
 		{
 			StockNode node = new StockNode(stock.getTicker());
 			for(Edge e : edges)
-				if(e.ticker1.equals(node.ticker))
-					node.edges.put(e.ticker1, e);
-				else if(e.ticker2.equals(node.ticker))
-					node.edges.put(e.ticker2, e);
+				if(e.ticker1.equals(node.ticker) || e.ticker2.equals(node.ticker))
+					node.sumOfIncomingEdges += e.similarity;
 			nodes.add(node);
 		}
 		return new Graph(nodes);

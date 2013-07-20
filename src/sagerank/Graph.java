@@ -24,13 +24,6 @@ public class Graph {
 	public Graph(ArrayList<StockNode> nodesList) 
 	{
 		nodes = new HashSet<StockNode>(nodesList);
-		for(StockNode node : nodes)
-		{
-			Double sum = 0.0;
-			for(Edge e : node.edges.values())
-				sum += e.similarity;
-			node.sumOfIncomingEdges = sum;
-		}
 		printRankedImportance();
 	}
 	

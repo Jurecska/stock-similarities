@@ -31,11 +31,11 @@ public class Runner
 			else if(input.startsWith("ld_all"))
 				Database.loadEverything();
 			else if(input.startsWith("ld"))
-				Database.load(input.substring(5, input.length()));
+				Database.load(input.substring(3, input.length()));
 			else if(input.startsWith("print_atts"))
 				Database.printAttributes(input.split(" ")[1]);
 			else if(input.startsWith("print_vect"))
-				Database.printVector(input.substring(13, input.length()));
+				Database.printVector(input.substring(11, input.length()));
 			else if(input.startsWith("sim"))
 				System.out.println(Database.measureSimilarities(input.split(" ")[1], input.split(" ")[2]));
 			else if(input.startsWith("sr"))
