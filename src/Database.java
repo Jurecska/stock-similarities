@@ -100,8 +100,12 @@ public class Database
 			//TODO: Fix this hacky way of handling BELFB containing FB (that doesn't even accomplish its goal)
 			while(s.hasNextLine())
 			{
-				while(!companyInfo.substring(1, 6).contains(ticker) && s.hasNextLine())
-					companyInfo = s.nextLine();  // Scan the csv file until you find the company
+					while(!companyInfo.substring(1, 6).contains(ticker) && s.hasNextLine())
+					{
+						companyInfo = s.nextLine();  // Scan the csv file until you find the company
+						if(companyInfo.length() < 7)
+							break;
+					}
 				String shouldBeTicker = companyInfo.split(",", 3)[0].replace("\"", "");
 				if(shouldBeTicker.equals(ticker))
 					break;
@@ -156,6 +160,18 @@ public class Database
 		for(String t : Constants.techTickers)
 			load(t);
 	}
+	public static void loadPharm() {
+		for(String t : Constants.pharmTickers)
+			load(t);
+	}
+	public static void loadFood() {
+		for(String t : Constants.foodTickers)
+			load(t);
+	}
+	public static void loadFinance() {
+		for(String t : Constants.financeTickers)
+			load(t);
+	}
 
 	/**
 	 * Get all the stocks that have been loaded into memory.
@@ -164,5 +180,15 @@ public class Database
 	public static ArrayList<Stock> getAllStocks() {
 		return new ArrayList<Stock>(stockMap.values());
 	}
+
+	public static synchronized void listLoadedCompanies() {
+		System.out.println("****Loaded Companies*****");
+		for(Stock stock : stockMap.values())
+			System.out.println(stock.getTicker() + " : " + stock.getCompanyName());
+			
+	}
+
+
+
 
 }
